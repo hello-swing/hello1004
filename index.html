@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>你的名字｜自我介紹</title>
+  <meta name="description" content="你的名字的個人網站：自我介紹、技能、經歷與聯絡方式。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="nav-logo" href="#top">你的名字</a>
+      <ul class="nav-links">
+        <li><a href="#about">關於我</a></li>
+        <li><a href="#skills">技能</a></li>
+        <li><a href="#experience">經歷</a></li>
+        <li><a href="#contact">聯絡</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- 開場 -->
+    <section class="hero">
+      <!-- 想放照片的話：把照片放進資料夾（例如 photo.jpg），再把下面的 div 換成
+           <img class="avatar" src="photo.jpg" alt="我的照片"> -->
+      <div class="avatar" aria-hidden="true">你</div>
+      <h1>嗨，我是<span class="highlight">你的名字</span></h1>
+      <p class="tagline">一句話介紹自己，例如：熱愛學習新事物的工程師／設計師／學生</p>
+      <a class="button" href="#contact">跟我聯絡</a>
+    </section>
+
+    <!-- 關於我 -->
+    <section id="about" class="section">
+      <h2>關於我</h2>
+      <p>
+        在這裡寫一段自我介紹，例如你來自哪裡、現在在做什麼、對什麼有興趣。
+        可以分成兩三段，讓別人快速了解你。
+      </p>
+      <p>
+        也可以寫寫你的個性、價值觀，或是最近正在學習的東西。
+      </p>
+    </section>
+
+    <!-- 技能 -->
+    <section id="skills" class="section">
+      <h2>技能與興趣</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>💻 專業技能</h3>
+          <ul class="tags">
+            <li>HTML / CSS</li>
+            <li>JavaScript</li>
+            <li>Python</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>🌐 語言</h3>
+          <ul class="tags">
+            <li>中文</li>
+            <li>英文</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>🎯 興趣</h3>
+          <ul class="tags">
+            <li>攝影</li>
+            <li>旅行</li>
+            <li>閱讀</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 經歷 -->
+    <section id="experience" class="section">
+      <h2>經歷</h2>
+      <ol class="timeline">
+        <li>
+          <span class="time">2024 – 現在</span>
+          <h3>職稱／身分 @ 公司或學校</h3>
+          <p>簡短說明你在這裡做了什麼、學到了什麼。</p>
+        </li>
+        <li>
+          <span class="time">2020 – 2024</span>
+          <h3>科系 @ 學校名稱</h3>
+          <p>可以寫主修、社團活動或重要的專題作品。</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- 聯絡 -->
+    <section id="contact" class="section">
+      <h2>聯絡我</h2>
+      <p>歡迎透過以下方式找到我：</p>
+      <ul class="contact-list">
+        <li><a href="mailto:you@example.com">✉️ you@example.com</a></li>
+        <li><a href="https://github.com/hello-swing" target="_blank" rel="noopener">🐙 GitHub</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year">2026</span> 你的名字・使用 GitHub Pages 架設</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

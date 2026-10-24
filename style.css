@@ -1,0 +1,264 @@
+/* ===== 顏色設定：改這裡就能換整個網站的配色 ===== */
+:root {
+  --bg: #fafaf7;
+  --surface: #ffffff;
+  --text: #1f2933;
+  --muted: #5f6b7a;
+  --accent: #2f7d6d;
+  --accent-soft: #e3f1ed;
+  --border: #e5e7eb;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14181d;
+    --surface: #1c2229;
+    --text: #e6e9ed;
+    --muted: #9aa5b1;
+    --accent: #5cc2aa;
+    --accent-soft: #1f3a34;
+    --border: #2c343d;
+  }
+}
+
+/* ===== 基本設定 ===== */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+  line-height: 1.75;
+  color: var(--text);
+  background: var(--bg);
+}
+
+a {
+  color: var(--accent);
+}
+
+/* ===== 導覽列 ===== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.nav-logo {
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+/* ===== 開場區 ===== */
+.hero {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 80px 16px 64px;
+  text-align: center;
+}
+
+.avatar {
+  width: 128px;
+  height: 128px;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: grid;
+  place-items: center;
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.hero h1 {
+  margin: 0 0 12px;
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1.3;
+}
+
+.highlight {
+  color: var(--accent);
+}
+
+.tagline {
+  margin: 0 auto 32px;
+  max-width: 560px;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.15s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+/* ===== 各區塊 ===== */
+.section {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 48px 16px;
+  border-top: 1px solid var(--border);
+}
+
+.section h2 {
+  margin: 0 0 20px;
+  font-size: 1.6rem;
+}
+
+/* 技能卡片 */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.card h3 {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tags li {
+  padding: 2px 12px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+/* 經歷時間軸 */
+.timeline {
+  margin: 0;
+  padding: 0 0 0 20px;
+  list-style: none;
+  border-left: 2px solid var(--accent-soft);
+}
+
+.timeline li {
+  position: relative;
+  padding-bottom: 28px;
+}
+
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -28px;
+  top: 8px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.timeline .time {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.timeline h3 {
+  margin: 2px 0 4px;
+  font-size: 1.1rem;
+}
+
+.timeline p {
+  margin: 0;
+}
+
+/* 聯絡 */
+.contact-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-list li {
+  margin-bottom: 8px;
+}
+
+/* ===== 頁尾 ===== */
+.site-footer {
+  padding: 32px 16px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ===== 手機版 ===== */
+@media (max-width: 520px) {
+  .nav {
+    justify-content: center;
+  }
+
+  .nav-links {
+    gap: 14px;
+    font-size: 0.95rem;
+  }
+
+  .hero {
+    padding-top: 48px;
+  }
+}
