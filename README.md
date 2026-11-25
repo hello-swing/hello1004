@@ -1,21 +1,33 @@
-# 我的自我介紹網站
+# 滴墨
 
-用純 HTML + CSS 做的個人網站，可以直接用 GitHub Pages 免費發布。
+一滴顏料落入水中，像樹枝一樣向外渲染、延伸——
+就像說出口的一句話，影響會一路往外擴散。
+
+純 HTML + CSS + JavaScript（Canvas），不需要任何套件，可以直接用 GitHub Pages 發布。
+
+## 怎麼玩
+
+- 點擊或觸控畫面任一處：在那裡滴下一滴顏料
+- 一段時間沒人操作，畫面會自己滴下一滴
+- 鍵盤：按空白鍵或 Enter 隨機滴一滴
+- 舊的痕跡會慢慢淡去，留下淡淡的漬
 
 ## 檔案說明
 
 | 檔案 | 用途 |
 | --- | --- |
-| `index.html` | 網站內容（文字都在這裡改） |
-| `style.css` | 外觀樣式（最上面的 `:root` 可以改配色） |
+| `index.html` | 頁面骨架 |
+| `style.css` | 紙張底色與紙紋 |
+| `main.js` | 顏料擴散的動畫 |
 
-## 怎麼修改內容
+## 想調整的話
 
-打開 `index.html`，把「你的名字」、自我介紹、技能、經歷、聯絡方式換成你自己的內容。
+都在 `main.js`：
 
-想放大頭照：把照片（例如 `photo.jpg`）上傳到儲存庫，再把 `index.html` 裡的
-`<div class="avatar" aria-hidden="true">你</div>` 換成
-`<img class="avatar" src="photo.jpg" alt="我的照片">`。
+- `PIGMENTS`：顏料顏色（RGB）
+- `drop()` 裡的 `rand(5, 9)`：每滴有幾條主枝
+- `stepBranch()` 裡的 `0.045`：分岔的機率，越大越茂密
+- `step()` 裡的 `rgba(PAPER, 0.022)`：痕跡淡去的速度
 
 ## 發布到 GitHub Pages
 
